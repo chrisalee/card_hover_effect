@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #dbf0e5, #e0f6f4);
+  font-family: "Montserrat", sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  width: 35vmin;
+  height: 35vmin;
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+}
+
+.container * {
+  pointer-events: none;
+}
+
+.card,
+.backside {
+  width: 35vmin;
+  height: 35vmin;
+  background-color: white;
+  transform: rotate(225deg) translate(-3vmin, -3vmin);
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  left: 35vmin;
+  border-radius: 1vmin;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card img {
+  margin-top: 2.5vmin;
+  width: 12vmin;
+  height: auto;
+  border-radius: 50%;
+  border: 0.8vmin solid #f0f0ef;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.name {
+  margin-top: 2vmin;
+  font-size: 2.2vmin;
+  color: #c07146;
+  font-weight: 600;
+}
+
+.subname {
+  margin-top: 0.3vmin;
+  font-size: 1.6vmin;
+  color: black;
+  font-weight: 600;
+}
+
+.descr {
+  margin-top: 2vmin;
+  font-size: 1.2vmin;
+  color: black;
+  font-weight: 500;
+  width: 30vmin;
+}
+
+.backside {
+  background-color: silver;
+  top: 35vmin;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, white, gray);
+}
+
+.backside img {
+  max-width: 10vmin;
+  height: auto;
+  position: relative;
+  left: 20vmin;
+  top: 18vmin;
+  transform-origin: 50% 50%;
+  transform: rotate(180deg);
+}
+
+/* ======== POSITION FIXING ======== */
+
+.unrotater {
+  width: 35vmin;
+  height: 35vmin;
+  transform: rotate(-225deg);
+  position: absolute;
+}
+
+.backsidePositioner {
+  transform-origin: 29.89vmin 29.89vmin;
+  transform: rotate(180deg);
+}
+
+/* ======== CROPPING ======== */
+
+.cropper,
+.backsideCropper {
+  position: absolute;
+  left: -35vmin;
+  right: -35vmin;
+  top: 0;
+  bottom: -35vmin;
+  overflow: hidden;
+}
+
+.backsideCropper {
+  top: -35vmin;
+  bottom: 35vmin;
+}
+
+/* ======== ANIMATION ======== */
+
+.container:hover .card {
+  transform: rotate(225deg) translate(5vmin, 5vmin);
+}
+
+.container:hover .backside {
+  transform: rotate(225deg) translate(5vmin, 5vmin);
+}
